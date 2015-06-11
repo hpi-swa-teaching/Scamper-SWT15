@@ -7,17 +7,17 @@ gitPath := (Smalltalk at: #'FileDirectory' ifAbsent: [  ])
   ifNotNil: [:fileDirectoryClass | (fileDirectoryClass default directoryNamed: gitCache ) fullName].
 
 Metacello new
-  baseline: 'Project02';
+  baseline: 'Scamper';
   repository: 'filetree://', gitPath, '/SWT15-Project-05/packages';
   get.
 
 Metacello new
-  baseline: 'Project02';
+  baseline: 'Scamper';
   repository: 'filetree://', gitPath, '/SWT15-Project-05/packages';
   load: 'TravisCI'.
 
 "Run the tests"
 TravisCIHarness
-  value: #( 'BaselineOfProject02' )
+  value: #( 'BaselineOfScamper' )
   value: 'TravisCISuccess.txt' 
   value: 'TravisCIFailure.txt'.
